@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "Title",
-            "content": "from jupyslides import jupyslides slides_path = &#39;Dickinson_Sample_Slides&#39; import glob img_list = glob.glob(slides_path + &#39;/*.png&#39;) img_list.sort() from IPython.display import Image for img in img_list: display(Image(filename=img, width=800, height=400)) .",
+            "content": "from IPython.display import display from PIL import Image import glob from IPython.display import HTML img_paths = glob.glob(os.path.join(&#39;/lab/labdat/blog/_notebooks/Dickinson_Sample_Slides&#39;, &#39;*.png&#39;)) img_paths.sort() for img_path in img_paths: display(Image.open(img_path)) HTML(&#39;&#39;&#39;&lt;script&gt; $(&#39;div .input&#39;).hide()&#39;&#39;&#39;) .",
             "url": "https://safenumeric.github.io/blog/2021/03/03/pdf-test.html",
             "relUrl": "/2021/03/03/pdf-test.html",
             "date": " • Mar 3, 2021"
