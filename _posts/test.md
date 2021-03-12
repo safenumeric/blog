@@ -1,8 +1,14 @@
+---
+toc: true
+layout: post
+description: A minimal example of using markdown with fastpages.
+categories: [markdown]
+title: start page
+---
 
 
-Usage:
-    jekyll <subcommand> [options]
-Options:
-    -s, --source [DIR]  Source directory (defaults to ./)
-    -d, --destination [DIR] Destication directory (default to ./_site)
-    -p, --plugins
+# Title
+- some
+- `blog`
+
+## test
