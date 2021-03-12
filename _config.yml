@@ -67,7 +67,6 @@ exclude:
 
 # this setting allows you to keep pages organized in the _pages folder
 include:
-  - _portfolio
   - _pages
   
 # This specifies what badges are turned on by default for notebook posts.
@@ -79,6 +78,35 @@ default_badges:
 # Escape HTML in post descriptions
 html_escape:
   description: false
+
+
+nav:
+  Home:
+    - '/blog'
+  Categories:
+    - '/'
+    - { Architecture: '/blog/categories/#Architecture' }
+    - { Math: '/blog/categories/#Math' }
+    - { Algorithm: '/blog/categories/#Algorithm' }
+    - { ML: '/blog/categories/#ML' }
+    - { Python: '/blog/categories/#Python' }
+    - { R: '/blog/categories/#R' }
+    - { Scala: '/blog/categories/#Scala' }
+    - { Spark: '/blog/categories/#Spark' }
+    - { Java: '/blog/categories/#Java' }
+    - { Hadoop: '/blog/categories/#Hadoop' }
+    - { Spring: '/blog/categories/#Java' }
+    - { JavaScript: '/blog/categories/#JavaScript' }
+    - { SQL: '/blog/categories/#SQL' }
+    - { NoSQL: '/blog/categories/#NoSQL' }
+    - { WEB: '/blog/categories/#WEB' }
+    - { Linux: '/blog/categories/#Linux' }
+    - { DevOps: '/blog/categories/#DevOps' }
+    - { Trouble: '/blog/categories/#Trouble' }
+    - { etc: '/blog/categories/#etc' }
+
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
 
 # Everything below here should be left alone. Modifications may break fastpages
 future: true

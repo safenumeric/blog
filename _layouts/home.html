@@ -3,6 +3,30 @@ layout: default
 ---
 
 <div class="home">
+
+  {% include sidebar.html %}
+
+  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+  <div class="wrap">
+    <div class="masthead nav-down">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a href="{{ site.baseurl }}/" title="{{ site.title }}">
+            <!-- <img class="masthead-logo" src="{{ site.baseurl }}{{ site.logo }}"/> -->
+            <img class="masthead-logo" src="/assets/images/model.png"/>
+
+          <small id="blog-title">{{ site.tagline }}</small>
+          </a>
+        </h3>
+      </div>
+    </div>
+
+    <div class="container content">
+      {{ content }}
+    </div>
+  </div>
+
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
