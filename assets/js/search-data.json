@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Title",
-            "content": "import multiprocessing as mp from multiprocessing import Pool import numpy as np from datetime import datetime def parallelize_dataframe(df, func, n_cores=4): df_split = np.array_split(df, n_cores) pool = Pool(n_cores) df = pd.concat(pool.map(func, df_split)) pool.close() pool.join() return df . {% include sidebar.html %} &lt;!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --&gt; &lt;div class=&quot;wrap&quot;&gt; &lt;div class=&quot;masthead nav-down&quot;&gt; &lt;div class=&quot;container&quot;&gt; &lt;h3 class=&quot;masthead-title&quot;&gt; &lt;a href=&quot;{{ site.baseurl }}/&quot; title=&quot;{{ site.title }}&quot;&gt; &lt;!-- &lt;img class=&quot;masthead-logo&quot; src=&quot;{{ site.baseurl }}{{ site.logo }}&quot;/&gt; --&gt; &lt;img class=&quot;masthead-logo&quot; src=&quot;/assets/images/model.png&quot;/&gt; &lt;small id=&quot;blog-title&quot;&gt;{{ site.tagline }}&lt;/small&gt; &lt;/a&gt; &lt;/h3&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;container content&quot;&gt; {{ content }} &lt;/div&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; // Hide Header on on scroll down var didScroll; var lastScrollTop = 0; var delta = 5; var navbarHeight = $(&#39;.masthead&#39;).outerHeight(); $(window).scroll(function(event){ didScroll = true; }); setInterval(function() { if (didScroll) { hasScrolled(); didScroll = false; } }, 250); function hasScrolled() { var st = $(this).scrollTop(); // Make sure they scroll more than delta if(Math.abs(lastScrollTop - st) &lt;= delta) return; // If they scrolled down and are past the navbar, add class .nav-up. // This is necessary so you never see what is &quot;behind&quot; the navbar. if (st &gt; lastScrollTop &amp;&amp; st &gt; navbarHeight){ // Scroll Down $(&#39;.masthead&#39;).removeClass(&#39;nav-down&#39;).addClass(&#39;nav-up&#39;); } else { // Scroll Up if(st + $(window).height() &lt; $(document).height()) { $(&#39;.masthead&#39;).removeClass(&#39;nav-up&#39;).addClass(&#39;nav-down&#39;); } } lastScrollTop = st; } &lt;/script&gt; .",
+            "content": "import multiprocessing as mp from multiprocessing import Pool import numpy as np from datetime import datetime def parallelize_dataframe(df, func, n_cores=4): df_split = np.array_split(df, n_cores) pool = Pool(n_cores) df = pd.concat(pool.map(func, df_split)) pool.close() pool.join() return df . &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&gt; &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt; {% include head.html %} &lt;body&gt; {% include sidebar.html %} &lt;!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --&gt; &lt;div class=&quot;wrap&quot;&gt; &lt;div class=&quot;masthead nav-down&quot;&gt; &lt;div class=&quot;container&quot;&gt; &lt;h3 class=&quot;masthead-title&quot;&gt; &lt;a href=&quot;{{ site.baseurl }}/&quot; title=&quot;{{ site.title }}&quot;&gt; &lt;!-- &lt;img class=&quot;masthead-logo&quot; src=&quot;{{ site.baseurl }}{{ site.logo }}&quot;/&gt; --&gt; &lt;img class=&quot;masthead-logo&quot; src=&quot;/assets/images/model.png&quot;/&gt; &lt;small id=&quot;blog-title&quot;&gt;{{ site.tagline }}&lt;/small&gt; &lt;/a&gt; &lt;/h3&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;container content&quot;&gt; {{ content }} &lt;/div&gt; &lt;/div&gt; &lt;a href=&quot;/search/&quot; class=&quot;search&quot;&gt; &lt;i class=&quot;fa fa-search&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;!-- &lt;img src=&quot;/assets/images/search.png&quot;/&gt; --&gt; &lt;/a&gt; &lt;label for=&quot;sidebar-checkbox&quot; class=&quot;sidebar-toggle&quot;&gt;&lt;/label&gt; &lt;script&gt; (function(document) { var toggle = document.querySelector(&#39;.sidebar-toggle&#39;); var sidebar = document.querySelector(&#39;#sidebar&#39;); var checkbox = document.querySelector(&#39;#sidebar-checkbox&#39;); document.addEventListener(&#39;click&#39;, function(e) { var target = e.target; if (target === toggle) { checkbox.checked = !checkbox.checked; e.preventDefault(); } else if (checkbox.checked &amp;&amp; !sidebar.contains(target)) { /* click outside the sidebar when sidebar is open */ checkbox.checked = false; } }, false); })(document); &lt;/script&gt; {% if site.google_analytics_token %} &lt;script&gt; (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,&#39;script&#39;,&#39;https://www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;); ga(&#39;create&#39;, &#39;{{ site.google_analytics_token }}&#39;, &#39;auto&#39;); ga(&#39;send&#39;, &#39;pageview&#39;); &lt;/script&gt; {% endif %} &lt;script id=&quot;dsq-count-scr&quot; src=&quot;//sparkoptimizer-github-io.disqus.com/count.js&quot; async&gt;&lt;/script&gt; &lt;/body&gt; {% if site.disqus_short_name %} &lt;script id=&quot;dsq-count-scr&quot; src=&quot;//{{ site.disqus_short_name }}.disqus.com/count.js&quot; async&gt;&lt;/script&gt; {% endif %} &lt;script type=&quot;text/javascript&quot;&gt; // Hide Header on on scroll down var didScroll; var lastScrollTop = 0; var delta = 5; var navbarHeight = $(&#39;.masthead&#39;).outerHeight(); $(window).scroll(function(event){ didScroll = true; }); setInterval(function() { if (didScroll) { hasScrolled(); didScroll = false; } }, 250); function hasScrolled() { var st = $(this).scrollTop(); // Make sure they scroll more than delta if(Math.abs(lastScrollTop - st) &lt;= delta) return; // If they scrolled down and are past the navbar, add class .nav-up. // This is necessary so you never see what is &quot;behind&quot; the navbar. if (st &gt; lastScrollTop &amp;&amp; st &gt; navbarHeight){ // Scroll Down $(&#39;.masthead&#39;).removeClass(&#39;nav-down&#39;).addClass(&#39;nav-up&#39;); } else { // Scroll Up if(st + $(window).height() &lt; $(document).height()) { $(&#39;.masthead&#39;).removeClass(&#39;nav-up&#39;).addClass(&#39;nav-down&#39;); } } lastScrollTop = st; } &lt;/script&gt; &lt;/html&gt; .",
             "url": "https://safenumeric.github.io/blog/2021/03/10/multi.html",
             "relUrl": "/2021/03/10/multi.html",
             "date": " • Mar 10, 2021"
@@ -35,6 +35,17 @@
   
     
         ,"post3": {
+            "title": "DataScience",
+            "content": "TEST .",
+            "url": "https://safenumeric.github.io/blog/arviz/inferencedata/data/2020/02/15/ddd.html",
+            "relUrl": "/arviz/inferencedata/data/2020/02/15/ddd.html",
+            "date": " • Feb 15, 2020"
+        }
+        
+    
+  
+    
+        ,"post4": {
             "title": "An Example Markdown Post",
             "content": "Example Markdown Post . Basic setup . Jekyll requires blog post files to be named according to the following format: . YEAR-MONTH-DAY-filename.md . Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and filename is whatever file name you choose, to remind yourself what this post is about. .md is the file extension for markdown files. . The first line of the file should start with a single hash character, then a space, then your title. This is how you create a “level 1 heading” in markdown. Then you can create level 2, 3, etc headings as you wish but repeating the hash character, such as you see in the line ## File names above. . Basic formatting . You can use italics, bold, code font text, and create links. Here’s a footnote 1. Here’s a horizontal rule: . . Lists . Here’s a list: . item 1 | item 2 | . And a numbered list: . item 1 | item 2 | Boxes and stuff . This is a quotation . . You can include alert boxes …and… . . You can include info boxes Images . . Code . You can format text and code per usual . General preformatted text: . # Do a thing do_thing() . Python code and output: . # Prints &#39;2&#39; print(1+1) . 2 . Formatting text as shell commands: . echo &quot;hello world&quot; ./some_script.sh --option &quot;value&quot; wget https://example.com/cat_photo1.png . Formatting text as YAML: . key: value - another_key: &quot;another value&quot; . Tables . Column 1 Column 2 . A thing | Another thing | . Tweetcards . Altair 4.0 is released! https://t.co/PCyrIOTcvvTry it with: pip install -U altairThe full list of changes is at https://t.co/roXmzcsT58 ...read on for some highlights. pic.twitter.com/vWJ0ZveKbZ . &mdash; Jake VanderPlas (@jakevdp) December 11, 2019 Footnotes . This is the footnote. &#8617; . |",
             "url": "https://safenumeric.github.io/blog/markdown/2020/01/14/test-markdown-post.html",
@@ -62,13 +73,8 @@
   
 
   
-  
 
   
-
-  
-  
-
   
 
   
@@ -77,13 +83,20 @@
   
 
   
+
   
 
   
   
 
   
-      ,"page11": {
+  
+
+  
+  
+
+  
+      ,"page12": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://safenumeric.github.io/blog/robots.txt",

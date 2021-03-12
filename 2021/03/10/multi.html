@@ -63,7 +63,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/sidebar/">Sidebar</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/categories/">Categories</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/sidebar/">Sidebar</a><a class="page-link" href="/blog/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -152,70 +152,119 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="n">sidebar</span><span class="o">.</span><span class="n">html</span> <span class="o">%</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">&lt;!</span>DOCTYPE html&gt;
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;ko&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
 
-<span class="o">&lt;!</span>-- Wrap is the content to <span class="nb">shift</span> when toggling the sidebar. We wrap the
-     <span class="n">content</span> <span class="n">to</span> <span class="n">avoid</span> <span class="nb">any</span> <span class="n">CSS</span> <span class="n">collisions</span> <span class="k">with</span> <span class="n">our</span> <span class="n">real</span> <span class="n">content</span><span class="o">.</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;wrap&quot;</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;masthead nav-down&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;container&quot;</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">h3</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;masthead-title&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ site.baseurl }}/&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ site.title }}&quot;</span><span class="o">&gt;</span>
-          <span class="o">&lt;!</span>-- &lt;img <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;masthead-logo&quot;</span> <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;{{ site.baseurl }}{{ site.logo }}&quot;</span>/&gt; --&gt;
-          <span class="o">&lt;</span><span class="n">img</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;masthead-logo&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;/assets/images/model.png&quot;</span><span class="o">/&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="n">head</span><span class="o">.</span><span class="n">html</span> <span class="o">%</span><span class="p">}</span>
 
-        <span class="o">&lt;</span><span class="n">small</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;blog-title&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">site</span><span class="o">.</span><span class="n">tagline</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">small</span><span class="o">&gt;</span>
-        <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
 
+    <span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="n">sidebar</span><span class="o">.</span><span class="n">html</span> <span class="o">%</span><span class="p">}</span>
+
+    <span class="o">&lt;!</span>-- Wrap is the content to <span class="nb">shift</span> when toggling the sidebar. We wrap the
+         <span class="n">content</span> <span class="n">to</span> <span class="n">avoid</span> <span class="nb">any</span> <span class="n">CSS</span> <span class="n">collisions</span> <span class="k">with</span> <span class="n">our</span> <span class="n">real</span> <span class="n">content</span><span class="o">.</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;wrap&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;masthead nav-down&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;container&quot;</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">h3</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;masthead-title&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ site.baseurl }}/&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ site.title }}&quot;</span><span class="o">&gt;</span>
+              <span class="o">&lt;!</span>-- &lt;img <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;masthead-logo&quot;</span> <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;{{ site.baseurl }}{{ site.logo }}&quot;</span>/&gt; --&gt;
+              <span class="o">&lt;</span><span class="n">img</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;masthead-logo&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;/assets/images/model.png&quot;</span><span class="o">/&gt;</span>
+
+            <span class="o">&lt;</span><span class="n">small</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;blog-title&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">site</span><span class="o">.</span><span class="n">tagline</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">small</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+          <span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+      <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;container content&quot;</span><span class="o">&gt;</span>
+        <span class="p">{{</span> <span class="n">content</span> <span class="p">}}</span>
+      <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
     <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/search/&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;search&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">i</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;fa fa-search&quot;</span> <span class="n">aria</span><span class="o">-</span><span class="n">hidden</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;</span>
+      <span class="o">&lt;!</span>-- &lt;img <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;/assets/images/search.png&quot;</span>/&gt; --&gt;
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;sidebar-checkbox&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;sidebar-toggle&quot;</span><span class="o">&gt;&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
 
-  <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;container content&quot;</span><span class="o">&gt;</span>
-    <span class="p">{{</span> <span class="n">content</span> <span class="p">}}</span>
-  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>  
+    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+      <span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">document</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">var</span> <span class="n">toggle</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;.sidebar-toggle&#39;</span><span class="p">);</span>
+        <span class="n">var</span> <span class="n">sidebar</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;#sidebar&#39;</span><span class="p">);</span>
+        <span class="n">var</span> <span class="n">checkbox</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;#sidebar-checkbox&#39;</span><span class="p">);</span>
 
-<span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
-  <span class="o">//</span> <span class="n">Hide</span> <span class="n">Header</span> <span class="n">on</span> <span class="n">on</span> <span class="n">scroll</span> <span class="n">down</span>
-<span class="n">var</span> <span class="n">didScroll</span><span class="p">;</span>
-<span class="n">var</span> <span class="n">lastScrollTop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">var</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="n">var</span> <span class="n">navbarHeight</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="s1">&#39;.masthead&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">outerHeight</span><span class="p">();</span>
+        <span class="n">document</span><span class="o">.</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">var</span> <span class="n">target</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">target</span><span class="p">;</span>
 
-<span class="err">$</span><span class="p">(</span><span class="n">window</span><span class="p">)</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">){</span>
-  <span class="n">didScroll</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>
-<span class="p">});</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">target</span> <span class="o">===</span> <span class="n">toggle</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">checkbox</span><span class="o">.</span><span class="n">checked</span> <span class="o">=</span> <span class="o">!</span>checkbox.checked<span class="p">;</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">preventDefault</span><span class="p">();</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">checkbox</span><span class="o">.</span><span class="n">checked</span> <span class="o">&amp;&amp;</span> <span class="o">!</span>sidebar.contains<span class="o">(</span>target<span class="o">))</span> <span class="o">{</span>
+            <span class="o">/*</span> <span class="n">click</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">sidebar</span> <span class="n">when</span> <span class="n">sidebar</span> <span class="ow">is</span> <span class="nb">open</span> <span class="o">*/</span>
+            <span class="n">checkbox</span><span class="o">.</span><span class="n">checked</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+          <span class="p">}</span>
+        <span class="p">},</span> <span class="n">false</span><span class="p">);</span>
+      <span class="p">})(</span><span class="n">document</span><span class="p">);</span>
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">site</span><span class="o">.</span><span class="n">google_analytics_token</span> <span class="o">%</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>      
+<span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">o</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">m</span><span class="p">){</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;GoogleAnalyticsObject&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">r</span><span class="p">;</span><span class="n">i</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">||</span><span class="n">function</span><span class="p">(){</span> <span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">q</span><span class="o">=</span><span class="n">i</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">q</span><span class="o">||</span><span class="p">[])</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">arguments</span><span class="p">)},</span><span class="n">i</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="n">new</span> <span class="n">Date</span><span class="p">();</span><span class="n">a</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="n">o</span><span class="p">),</span> <span class="n">m</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="n">o</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span><span class="n">a</span><span class="o">.</span><span class="k">async</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">a</span><span class="o">.</span><span class="n">src</span><span class="o">=</span><span class="n">g</span><span class="p">;</span><span class="n">m</span><span class="o">.</span><span class="n">parentNode</span><span class="o">.</span><span class="n">insertBefore</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">m</span><span class="p">)</span> <span class="p">})(</span><span class="n">window</span><span class="p">,</span><span class="n">document</span><span class="p">,</span><span class="s1">&#39;script&#39;</span><span class="p">,</span><span class="s1">&#39;https://www.google-analytics.com/analytics.js&#39;</span><span class="p">,</span><span class="s1">&#39;ga&#39;</span><span class="p">);</span>
 
-<span class="n">setInterval</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">didScroll</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">hasScrolled</span><span class="p">();</span>
-      <span class="n">didScroll</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">},</span> <span class="mi">250</span><span class="p">);</span>
+<span class="n">ga</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">,</span> <span class="s1">&#39;{{ site.google_analytics_token }}&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">);</span>
+<span class="n">ga</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span> <span class="s1">&#39;pageview&#39;</span><span class="p">);</span>
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="n">script</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;dsq-count-scr&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;//sparkoptimizer-github-io.disqus.com/count.js&quot;</span> <span class="k">async</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">site</span><span class="o">.</span><span class="n">disqus_short_name</span> <span class="o">%</span><span class="p">}</span>
+  <span class="o">&lt;</span><span class="n">script</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;dsq-count-scr&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;//{{ site.disqus_short_name }}.disqus.com/count.js&quot;</span> <span class="k">async</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
 
-<span class="n">function</span> <span class="n">hasScrolled</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">var</span> <span class="n">st</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="o">.</span><span class="n">scrollTop</span><span class="p">();</span>
+  <span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+      <span class="o">//</span> <span class="n">Hide</span> <span class="n">Header</span> <span class="n">on</span> <span class="n">on</span> <span class="n">scroll</span> <span class="n">down</span>
+    <span class="n">var</span> <span class="n">didScroll</span><span class="p">;</span>
+    <span class="n">var</span> <span class="n">lastScrollTop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">var</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">var</span> <span class="n">navbarHeight</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="s1">&#39;.masthead&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">outerHeight</span><span class="p">();</span>
 
-  <span class="o">//</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">they</span> <span class="n">scroll</span> <span class="n">more</span> <span class="n">than</span> <span class="n">delta</span>
-  <span class="k">if</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lastScrollTop</span> <span class="o">-</span> <span class="n">st</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">delta</span><span class="p">)</span>
-      <span class="k">return</span><span class="p">;</span>
+    <span class="err">$</span><span class="p">(</span><span class="n">window</span><span class="p">)</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">){</span>
+      <span class="n">didScroll</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>
+    <span class="p">});</span>
 
-  <span class="o">//</span> <span class="n">If</span> <span class="n">they</span> <span class="n">scrolled</span> <span class="n">down</span> <span class="ow">and</span> <span class="n">are</span> <span class="n">past</span> <span class="n">the</span> <span class="n">navbar</span><span class="p">,</span> <span class="n">add</span> <span class="k">class</span> <span class="err">.</span><span class="nc">nav</span><span class="o">-</span><span class="n">up</span><span class="o">.</span>
-  <span class="o">//</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">necessary</span> <span class="n">so</span> <span class="n">you</span> <span class="n">never</span> <span class="n">see</span> <span class="n">what</span> <span class="ow">is</span> <span class="s2">&quot;behind&quot;</span> <span class="n">the</span> <span class="n">navbar</span><span class="o">.</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">st</span> <span class="o">&gt;</span> <span class="n">lastScrollTop</span> <span class="o">&amp;&amp;</span> <span class="n">st</span> <span class="o">&gt;</span> <span class="n">navbarHeight</span><span class="p">){</span>
-      <span class="o">//</span> <span class="n">Scroll</span> <span class="n">Down</span>
-      <span class="err">$</span><span class="p">(</span><span class="s1">&#39;.masthead&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">removeClass</span><span class="p">(</span><span class="s1">&#39;nav-down&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">addClass</span><span class="p">(</span><span class="s1">&#39;nav-up&#39;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="o">//</span> <span class="n">Scroll</span> <span class="n">Up</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">st</span> <span class="o">+</span> <span class="err">$</span><span class="p">(</span><span class="n">window</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">()</span> <span class="o">&lt;</span> <span class="err">$</span><span class="p">(</span><span class="n">document</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">())</span> <span class="p">{</span>
-          <span class="err">$</span><span class="p">(</span><span class="s1">&#39;.masthead&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">removeClass</span><span class="p">(</span><span class="s1">&#39;nav-up&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">addClass</span><span class="p">(</span><span class="s1">&#39;nav-down&#39;</span><span class="p">);</span>
+    <span class="n">setInterval</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">didScroll</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">hasScrolled</span><span class="p">();</span>
+          <span class="n">didScroll</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
       <span class="p">}</span>
-  <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">250</span><span class="p">);</span>
 
-  <span class="n">lastScrollTop</span> <span class="o">=</span> <span class="n">st</span><span class="p">;</span>
+    <span class="n">function</span> <span class="n">hasScrolled</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">var</span> <span class="n">st</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="o">.</span><span class="n">scrollTop</span><span class="p">();</span>
+
+      <span class="o">//</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">they</span> <span class="n">scroll</span> <span class="n">more</span> <span class="n">than</span> <span class="n">delta</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lastScrollTop</span> <span class="o">-</span> <span class="n">st</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">delta</span><span class="p">)</span>
+          <span class="k">return</span><span class="p">;</span>
+
+      <span class="o">//</span> <span class="n">If</span> <span class="n">they</span> <span class="n">scrolled</span> <span class="n">down</span> <span class="ow">and</span> <span class="n">are</span> <span class="n">past</span> <span class="n">the</span> <span class="n">navbar</span><span class="p">,</span> <span class="n">add</span> <span class="k">class</span> <span class="err">.</span><span class="nc">nav</span><span class="o">-</span><span class="n">up</span><span class="o">.</span>
+      <span class="o">//</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">necessary</span> <span class="n">so</span> <span class="n">you</span> <span class="n">never</span> <span class="n">see</span> <span class="n">what</span> <span class="ow">is</span> <span class="s2">&quot;behind&quot;</span> <span class="n">the</span> <span class="n">navbar</span><span class="o">.</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">st</span> <span class="o">&gt;</span> <span class="n">lastScrollTop</span> <span class="o">&amp;&amp;</span> <span class="n">st</span> <span class="o">&gt;</span> <span class="n">navbarHeight</span><span class="p">){</span>
+          <span class="o">//</span> <span class="n">Scroll</span> <span class="n">Down</span>
+          <span class="err">$</span><span class="p">(</span><span class="s1">&#39;.masthead&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">removeClass</span><span class="p">(</span><span class="s1">&#39;nav-down&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">addClass</span><span class="p">(</span><span class="s1">&#39;nav-up&#39;</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="o">//</span> <span class="n">Scroll</span> <span class="n">Up</span>
+          <span class="k">if</span><span class="p">(</span><span class="n">st</span> <span class="o">+</span> <span class="err">$</span><span class="p">(</span><span class="n">window</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">()</span> <span class="o">&lt;</span> <span class="err">$</span><span class="p">(</span><span class="n">document</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">())</span> <span class="p">{</span>
+              <span class="err">$</span><span class="p">(</span><span class="s1">&#39;.masthead&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">removeClass</span><span class="p">(</span><span class="s1">&#39;nav-up&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">addClass</span><span class="p">(</span><span class="s1">&#39;nav-down&#39;</span><span class="p">);</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="n">lastScrollTop</span> <span class="o">=</span> <span class="n">st</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
 </pre></div>
 
     </div>
