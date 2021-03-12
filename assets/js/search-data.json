@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Title",
-            "content": "import multiprocessing as mp from multiprocessing import Pool import numpy as np from datetime import datetime def parallelize_dataframe(df, func, n_cores=4): df_split = np.array_split(df, n_cores) pool = Pool(n_cores) df = pd.concat(pool.map(func, df_split)) pool.close() pool.join() return df .",
+            "content": "import multiprocessing as mp from multiprocessing import Pool import numpy as np from datetime import datetime def parallelize_dataframe(df, func, n_cores=4): df_split = np.array_split(df, n_cores) pool = Pool(n_cores) df = pd.concat(pool.map(func, df_split)) pool.close() pool.join() return df . {% include sidebar.html %} &lt;!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --&gt; &lt;div class=&quot;wrap&quot;&gt; &lt;div class=&quot;masthead nav-down&quot;&gt; &lt;div class=&quot;container&quot;&gt; &lt;h3 class=&quot;masthead-title&quot;&gt; &lt;a href=&quot;{{ site.baseurl }}/&quot; title=&quot;{{ site.title }}&quot;&gt; &lt;!-- &lt;img class=&quot;masthead-logo&quot; src=&quot;{{ site.baseurl }}{{ site.logo }}&quot;/&gt; --&gt; &lt;img class=&quot;masthead-logo&quot; src=&quot;/assets/images/model.png&quot;/&gt; &lt;small id=&quot;blog-title&quot;&gt;{{ site.tagline }}&lt;/small&gt; &lt;/a&gt; &lt;/h3&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;container content&quot;&gt; {{ content }} &lt;/div&gt; &lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; // Hide Header on on scroll down var didScroll; var lastScrollTop = 0; var delta = 5; var navbarHeight = $(&#39;.masthead&#39;).outerHeight(); $(window).scroll(function(event){ didScroll = true; }); setInterval(function() { if (didScroll) { hasScrolled(); didScroll = false; } }, 250); function hasScrolled() { var st = $(this).scrollTop(); // Make sure they scroll more than delta if(Math.abs(lastScrollTop - st) &lt;= delta) return; // If they scrolled down and are past the navbar, add class .nav-up. // This is necessary so you never see what is &quot;behind&quot; the navbar. if (st &gt; lastScrollTop &amp;&amp; st &gt; navbarHeight){ // Scroll Down $(&#39;.masthead&#39;).removeClass(&#39;nav-down&#39;).addClass(&#39;nav-up&#39;); } else { // Scroll Up if(st + $(window).height() &lt; $(document).height()) { $(&#39;.masthead&#39;).removeClass(&#39;nav-up&#39;).addClass(&#39;nav-down&#39;); } } lastScrollTop = st; } &lt;/script&gt; .",
             "url": "https://safenumeric.github.io/blog/2021/03/10/multi.html",
             "relUrl": "/2021/03/10/multi.html",
             "date": " • Mar 10, 2021"
@@ -72,7 +72,6 @@
   
 
   
-  
 
   
   
@@ -81,7 +80,10 @@
   
 
   
-      ,"page10": {
+  
+
+  
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://safenumeric.github.io/blog/robots.txt",
