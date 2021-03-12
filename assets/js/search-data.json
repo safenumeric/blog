@@ -4,9 +4,9 @@
         "post0": {
             "title": "Title",
             "content": "import multiprocessing as mp from multiprocessing import Pool import numpy as np from datetime import datetime def parallelize_dataframe(df, func, n_cores=4): df_split = np.array_split(df, n_cores) pool = Pool(n_cores) df = pd.concat(pool.map(func, df_split)) pool.close() pool.join() return df .",
-            "url": "https://safenumeric.github.io/blog/2021/03/11/.html",
-            "relUrl": "/2021/03/11/.html",
-            "date": " • Mar 11, 2021"
+            "url": "https://safenumeric.github.io/blog/2021/03/10/multi.html",
+            "relUrl": "/2021/03/10/multi.html",
+            "date": " • Mar 10, 2021"
         }
         
     
