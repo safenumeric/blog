@@ -1,0 +1,71 @@
+---
+layout: categories
+permalink: /categories/
+title: Category
+search_exclude: true
+---
+
+{% include sidebar.html %}
+
+<!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+     content to avoid any CSS collisions with our real content. -->
+<div class="wrap">
+  <div class="masthead nav-down">
+    <div class="container">
+      <h3 class="masthead-title">
+        <a href="{{ site.baseurl }}/" title="{{ site.title }}">
+          <!-- <img class="masthead-logo" src="{{ site.baseurl }}{{ site.logo }}"/> -->
+          <img class="masthead-logo" src="/assets/images/model.png"/>
+
+        <small id="blog-title">{{ site.tagline }}</small>
+        </a>
+      </h3>
+
+    </div>
+  </div>
+
+  <div class="container content">
+    {{ content }}
+  </div>
+</div>  
+
+<script type="text/javascript">
+  // Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('.masthead').outerHeight();
+
+$(window).scroll(function(event){
+  didScroll = true;
+});
+
+setInterval(function() {
+  if (didScroll) {
+      hasScrolled();
+      didScroll = false;
+  }
+}, 250);
+
+function hasScrolled() {
+  var st = $(this).scrollTop();
+
+  // Make sure they scroll more than delta
+  if(Math.abs(lastScrollTop - st) <= delta)
+      return;
+
+  // If they scrolled down and are past the navbar, add class .nav-up.
+  // This is necessary so you never see what is "behind" the navbar.
+  if (st > lastScrollTop && st > navbarHeight){
+      // Scroll Down
+      $('.masthead').removeClass('nav-down').addClass('nav-up');
+  } else {
+      // Scroll Up
+      if(st + $(window).height() < $(document).height()) {
+          $('.masthead').removeClass('nav-up').addClass('nav-down');
+      }
+  }
+
+  lastScrollTop = st;
+}
+</script>
